@@ -7,7 +7,7 @@ const SocialIcons = () => (
     <div className="social-icons-container">
         <a href="https://dexscreener.com" target="_blank" rel="noreferrer">
             <img
-                src="/images/dexscreener.png"
+                src="images/dexscreener.png"
                 alt="Dexscreener"
                 className="social-icon dexscreener-icon"
             />

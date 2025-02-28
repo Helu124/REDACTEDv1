@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import './ImageGallery.css';
 
 const images = [
-    '/images/ALBERT.png',
-    '/images/MINDBLOWN.png'
+    'images/ALBERT.png',
+    'images/MINDBLOWN.png'
 ];
 
 const ImageGallery = () => {
