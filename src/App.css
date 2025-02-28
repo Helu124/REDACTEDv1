@@ -1,4 +1,12 @@
 /* src/App.css */
+@font-face {
+  font-family: 'Adult Swim';
+  src: url('./fonts/AdultSwim-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -45,7 +53,8 @@ body {
 }
 
 .text {
-  font-size: 4rem;
+  font-family: 'Adult Swim', monospace;
+  font-size: 5rem;
   font-weight: bold;
   letter-spacing: 3px;
   filter: blur(0.8px);
