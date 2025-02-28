@@ -12,7 +12,7 @@ const SocialIcons = () => (
                 className="social-icon dexscreener-icon"
             />
         </a>
-        <SocialIcon url="https://x.com" className="social-icon" />
+        <SocialIcon url="https://x.com/SolanaRedacted" className="social-icon" />
         <SocialIcon url="https://t.me/yourchannel" className="social-icon" />
     </div>
 );
