@@ -1,0 +1,27 @@
+/* SocialIcons.css */
+.social-icons-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Add white background only if needed */
+.dexscreener-icon {
+    padding: 5px;
+    background-color: #fff;
+}
