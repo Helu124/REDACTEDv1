@@ -4,7 +4,8 @@ import './ImageGallery.css';
 
 const images = [
     'images/ALBERT.png',
-    'images/MINDBLOWN.png'
+    'images/MINDBLOWN.png',
+    'images/einstein.png'
 ];
 
 const ImageGallery = () => {
