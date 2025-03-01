@@ -25,3 +25,32 @@
     padding: 5px;
     background-color: #fff;
 }
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .social-icons-container {
+        top: 5px;
+        right: 5px;
+        gap: 5px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Make icons stack on mobile */
+@media (max-width: 768px) {
+    .social-icons-container {
+        flex-direction: column;
+        right: 5px;
+        top: auto;
+        bottom: 10px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

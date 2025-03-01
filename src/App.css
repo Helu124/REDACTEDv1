@@ -1,23 +1,15 @@
+/* App.css */
+
 @font-face {
   font-family: 'Adult Swim';
-  src: url('/fonts/AdultSwim-Regular.otf') format('opentype');
-  /* Ensure the leading slash is present */
+  src: url('fonts/AdultSwim-Bold.woff2') format('woff2'),
+    url('fonts/AdultSwim-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  /* Removed gradient */
-  color: black;
-  font-family: 'Courier New', monospace;
-  text-transform: uppercase;
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -25,59 +17,35 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  /* Full height for desktop */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* Hide any overflow for desktop */
 }
 
 .half {
   width: 100%;
-  height: 50%;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
 }
 
 .white {
-  color: black;
-  top: 0;
-  z-index: 1;
-  /* Ensure text is above the video */
-}
-
-.black {
-  background-color: black;
-  color: white;
-  bottom: 0;
-}
-
-.text-container {
   position: relative;
-  z-index: 2;
-  /* Ensure text is above video */
+  width: 100%;
+  min-height: 50vh;
+  color: black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.text {
-  font-family: 'Adult Swim', monospace;
-  /* This is correct */
-  font-size: 5rem;
-  font-weight: bold;
-  letter-spacing: 3px;
-  filter: blur(0.8px);
-}
-
-.subtext {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  opacity: 0.7;
-  font-weight: bold;
-  /* Added this line to make the subtext bold */
-}
-
-/* Video Styling */
 .video-background {
   position: absolute;
   top: 0;
@@ -85,20 +53,96 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures the video covers the entire area */
   z-index: 0;
-  /* Put video behind text */
 }
 
-::before {
-  content: "";
-  position: absolute;
+.black {
+  background-color: black;
+  color: white;
   width: 100%;
-  height: 100%;
-  background-image: repeating-linear-gradient(-30deg,
-      rgba(0, 0, 0, 0.1) 0px,
-      rgba(0, 0, 0, 0.1) 2px,
-      transparent 2px,
-      transparent 10px);
-  opacity: 0.3;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.text-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.text {
+  font-family: 'Adult Swim', monospace;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  filter: blur(0.8px);
+}
+
+.subtext {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+/* Desktop version adjustments */
+@media (min-width: 769px) {
+  .white {
+    min-height: 50vh;
+    /* Video section takes up 50% of the viewport */
+  }
+
+  .black {
+    min-height: 50vh;
+    /* Black section takes up the other 50% */
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    /* Remove height constraint for mobile */
+  }
+
+  .white {
+    height: 100vh;
+    /* Full height of the viewport on mobile */
+  }
+
+  .black {
+    min-height: 100vh;
+    /* Full height of the viewport on mobile */
+  }
+
+  .text {
+    font-size: 3rem;
+  }
+
+  .subtext {
+    font-size: 1rem;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gallery-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 }

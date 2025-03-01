@@ -1,23 +1,52 @@
-/* src/components/ImageGallery.css */
 .gallery-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    /* Space between images */
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
+    padding: 50px 0;
     position: relative;
+    z-index: 3;
 }
 
+/* Gallery items */
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
 .gallery-image {
     width: 350px;
-    /* Make images bigger */
     height: 350px;
-    /* Adjust height accordingly */
     border-radius: 10px;
     object-fit: contain;
-    /* This ensures the whole image fits without cutting off */
     filter: brightness(0.8) contrast(1.2);
     transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center them horizontally */
+    }
+
+    .gallery-item {
+        width: 100%;
+        /* Make items take up full width */
+        justify-content: center;
+    }
+
+    .gallery-image {
+        width: 100%;
+        max-width: 300px;
+        /* Make images smaller */
+        height: auto;
+        /* Let height adjust based on aspect ratio */
+    }
 }
